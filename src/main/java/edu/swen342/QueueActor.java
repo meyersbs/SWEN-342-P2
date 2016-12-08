@@ -18,6 +18,8 @@ public class QueueActor extends UntypedActor{
     private ActorRef bodyChecker;
     private ActorRef bagChecker;
     private ActorRef securityActor;
+    private int passengersSeen = 0;
+    private boolean docCheckerDone = false;
 
     public QueueActor(int lineNum, ActorRef bodyChecker, ActorRef bagChecker, ActorRef securityActor) {
         this.LINE_NUMBER = lineNum;
@@ -32,6 +34,7 @@ public class QueueActor extends UntypedActor{
     public void onReceive(Object message) throws Exception{
     	
     	if(message instanceof Passenger){
+    	    this.passengersSeen++;
     		System.out.println("Queue Actor " + this.LINE_NUMBER + " received Passenger " + ((Passenger) message).getID() + ".");
     		
     		/*  
@@ -45,5 +48,10 @@ public class QueueActor extends UntypedActor{
     		/* #2 */
     		bagChecker.tell(message, getSelf());
     	}
+    	else if(message instanceof DocumentCheckerShuttingDown) {
+    	    System.out.println("QueueActor " + this.LINE_NUMBER + " received DocumentCheckerShuttingDown Signal.");
+    	    bodyChecker.tell(new ShutDown(), getSelf());
+            bagChecker.tell(new ShutDown(), getSelf());
+        }
     }
 }

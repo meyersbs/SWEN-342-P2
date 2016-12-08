@@ -55,6 +55,10 @@ public class BagCheckerActor extends UntypedActor {
                 securityActor.tell(b, getSelf());
             }
         }
+        else if(message instanceof ShutDown) {
+            System.out.println("BagCheckerActor " + this.LINE_NUMBER + " received ShutDown Signal.");
+            securityActor.tell(new BagScannerOff(), getSelf());
+        }
     }
 
 }

@@ -14,11 +14,4 @@ import akka.actor.Props;
 
 public class SystemActor {
 
-    /**
-     * Constructor.
-     */
-    public SystemActor() {
-
-    }
-
 }

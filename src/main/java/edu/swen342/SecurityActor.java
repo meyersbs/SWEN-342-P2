@@ -27,6 +27,8 @@ public class SecurityActor extends UntypedActor {
 	private final int LINE_NUMBER;
     private ArrayList<SecuritySummary> passengers = new ArrayList<SecuritySummary>();
     private ActorRef jailActor;
+    private boolean bagCheckerOff = false;
+    private boolean bodyCheckerOff = false;
 
     /**
      * Constructor.
@@ -75,6 +77,14 @@ public class SecurityActor extends UntypedActor {
                 this.passengers.add(s);
             }
         }
+        else if(message instanceof BodyScannerOff) {
+            System.out.println("SecurityActor " + this.LINE_NUMBER + " received BodyScannerOff Signal from BodyCheckerActor " + this.LINE_NUMBER + ".");
+            this.bodyCheckerOff = true;
+        }
+        else if(message instanceof BagScannerOff) {
+            System.out.println("SecurityActor " + this.LINE_NUMBER + " received BagScannerOff Signal from BagCheckerActor " + this.LINE_NUMBER + ".");
+            this.bagCheckerOff = true;
+        }
 
         for(SecuritySummary s : this.passengers) {
             if(s.getPassenger().getID() == tempPassengerID && summaryExists) {
@@ -82,11 +92,18 @@ public class SecurityActor extends UntypedActor {
                     if (!s.getBag() || !s.getBody()) {
                         System.out.println("Passenger " + s.getPassenger().getID() + " has failed security inspection. Notifying Jail Actor.");
                         this.jailActor.tell(s.getPassenger(), getSelf());
+                    } else {
+                        System.out.println("Passenger " + s.getPassenger().getID() + " has passed security inspection. They are free to travel.");
                     }
                 } catch(NullPointerException e) {
                     e.printStackTrace();
                 }
             }
+        }
+
+        if(bodyCheckerOff && bagCheckerOff) {
+            System.out.println("SecurityActor " + this.LINE_NUMBER + " is shutting down. Notifying JailActor.");
+            jailActor.tell(new EndOfDay(), getSelf());
         }
     }
 

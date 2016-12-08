@@ -1,4 +1,7 @@
-package edu.swen342.signals;
+package edu.swen342;
+
+import akka.actor.Actor;
+import akka.actor.ActorRef;
 
 /**
  * @project: SWEN-342 | TSA Airport
@@ -9,4 +12,5 @@ package edu.swen342.signals;
 
 public class BagScannerOff {
 
+    public BagScannerOff() {}
 }

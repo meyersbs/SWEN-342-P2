@@ -54,5 +54,9 @@ public class BodyCheckerActor extends UntypedActor {
                 securityActor.tell(b, getSelf());
             }
         }
+        else if(message instanceof ShutDown) {
+            System.out.println("BodyCheckerActor " + this.LINE_NUMBER + " received ShutDown Signal.");
+            securityActor.tell(new BodyScannerOff(), getSelf());
+        }
     }
 }

@@ -21,13 +21,13 @@ import akka.actor.UntypedActor;
 public class JailActor extends UntypedActor{
 
     private ArrayList<Passenger> prisoners = new ArrayList<Passenger>();
-    private int numOfSecretyStations;
+    private int numOfSecurityStations;
     private int station_EndDay_counter =0;
     /**
      * Constructor.
      */
     public JailActor(int numOfSecuretyStations) {
-    	this.numOfSecretyStations = numOfSecuretyStations;
+    	this.numOfSecurityStations = numOfSecuretyStations;
     }
 
     @Override
@@ -44,11 +44,13 @@ public class JailActor extends UntypedActor{
     		//increment the station_EndDay_counter counter each time the EndOfDay is sent
     		station_EndDay_counter++;
     		/* If EndOfDay == numOFSecretyStation */
-    		if(station_EndDay_counter == numOfSecretyStations){
+    		if(station_EndDay_counter == numOfSecurityStations){
     			System.out.println("Closing Time");
     			//Loop over the prisoners and send them to permanent detention
-    			for (int i=0; i < prisoners.size(); i++) {
-    				System.out.println("Passenger " + prisoners.get(i) + " is sent to permanent detention.");
+				for(int i = 0; i < prisoners.size(); i++) {
+					System.out.println("JailActor is sending Passenger " + prisoners.get(i).getID() + " to permanent detention.");
+				}
+    			for(int i = 0; i < prisoners.size(); i++) {
     				/* TODO: Kill all remaining prisoners*/
     				//prisoners.get(i).tell(poisonPill());
     			}

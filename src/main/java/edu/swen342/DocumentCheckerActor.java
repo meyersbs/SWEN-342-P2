@@ -23,6 +23,8 @@ public class DocumentCheckerActor extends UntypedActor{
 
 	//passneger queue
 	private ArrayList<ActorRef> queues;
+	private int passengersChecked = 0;
+	private int passengersSentToQueue = 0;
 	
 	//random number generator for whether a passenger is turned away or allowed to proceed. 
 	private Random random = new Random();
@@ -40,6 +42,7 @@ public class DocumentCheckerActor extends UntypedActor{
     public void onReceive(Object message) throws Exception{
     	
     	if(message instanceof Passenger){
+    		passengersChecked++;
     		System.out.println("Document Checker received Passenger " + ((Passenger) message).getID() + ".");
     		
     		/*  
@@ -55,6 +58,7 @@ public class DocumentCheckerActor extends UntypedActor{
 				/* Add Passenger to one of the lines */
 
 				queues.get(queueCount).tell(message, getSelf());
+				passengersSentToQueue++;
 				queueCount = ((queueCount + 1)  % queues.size());
 				System.out.println("Documents approved for passenger " + ((Passenger) message).getID() + ". Passenger moving to the Security Queue .");
     		}
@@ -62,6 +66,13 @@ public class DocumentCheckerActor extends UntypedActor{
     		else{
     			System.out.println("Document Checker turns passenger " + ((Passenger) message).getID() + " away.");
     		}
+
+    		if(passengersChecked == 20) {
+    			System.out.println("Document Checker has no more passengers to check. Notifying Queues.");
+    			for(ActorRef q : queues) {
+    				q.tell(new DocumentCheckerShuttingDown(passengersSentToQueue, queueCount), getSelf());
+				}
+			}
 
     		
     	}
