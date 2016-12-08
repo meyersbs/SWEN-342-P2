@@ -7,33 +7,23 @@ package edu.swen342;
  * @author: Asma Sattar
  */
 
-public class Passenger {
+public class Bag {
 
-    /* User id should not change*/
+    /* Bag id should not change*/
     private final int ID;
-    private final Bag BAG;
 
     /**
      * Constructor.
      */
-    public Passenger(int id) {
+    public Bag(int id) {
         this.ID = id;
-        this.BAG = new Bag(id);
     }
 
 
     /*
-    * Returns Passenger id
+    * Returns Bag id
     */
     public int getID() { 
         return this.ID; 
-    }
-
-
-    /*
-    * Returns Passenger's bag
-    */
-    public Bag getBag() { 
-        return this.BAG;
     }
 }
