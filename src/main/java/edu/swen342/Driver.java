@@ -46,18 +46,18 @@ public class Driver {
 			for (int lineNumber = 1; lineNumber < STATION_COUNT; lineNumber++) {
 				System.out.println("Stations setting up");
 				/* turning on scanners */
-	   
-	   			System.out.println("Body Scanner " + lineNumber +  " on");
-	   			final ActorRef bodyChecker = system.actorOf(Props.create(BodyCheckerActor.class, lineNumber), "BodyScanner" + lineNumber);
 
-				System.out.println("Bag Scanner " + lineNumber +  " on");
-				final ActorRef bagChecker = system.actorOf(Props.create(BagCheckerActor.class, lineNumber), "BagScanner" + lineNumber);
+				System.out.println("Security Station " + lineNumber +  " is on.");
+				final ActorRef security = system.actorOf(Props.create(SecurityActor.class, lineNumber, jail), "SecurityStation" + lineNumber);
 
-				System.out.println("Security Station " + lineNumber +  " is on");
-				final ActorRef security = system.actorOf(Props.create(SecurityActor.class, lineNumber), "SecurityStation" + lineNumber);
+	   			System.out.println("Body Scanner " + lineNumber +  " on.");
+	   			final ActorRef bodyChecker = system.actorOf(Props.create(BodyCheckerActor.class, lineNumber, security), "BodyScanner" + lineNumber);
 
-				System.out.println("Queue " + lineNumber +  " is on");
-				final ActorRef queue = system.actorOf(Props.create(QueueActor.class, lineNumber, bodyChecker, bagChecker), "Queue" + lineNumber);
+				System.out.println("Bag Scanner " + lineNumber +  " on.");
+				final ActorRef bagChecker = system.actorOf(Props.create(BagCheckerActor.class, lineNumber, security), "BagScanner" + lineNumber);
+
+				System.out.println("Queue " + lineNumber +  " is on.");
+				final ActorRef queue = system.actorOf(Props.create(QueueActor.class, lineNumber, bodyChecker, bagChecker, security), "Queue" + lineNumber);
 
 				/* Add the queue to the queues array so you can pass it to the documentChecker*/
 				queues.add(queue);

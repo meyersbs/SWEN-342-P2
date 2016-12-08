@@ -1,4 +1,4 @@
-package edu.swen342.signals;
+package edu.swen342;
 
 /**
  * @project: SWEN-342 | TSA Airport
@@ -9,15 +9,15 @@ package edu.swen342.signals;
 
 public class BodyCheckReport {
 
-    private final int PASSENGER_ID;
+    private final Passenger PASSENGER;
     private final boolean SEND_TO_JAIL;
 
-    public BodyCheckReport(int id, boolean status) {
-        this.PASSENGER_ID = id;
+    public BodyCheckReport(Passenger p, boolean status) {
+        this.PASSENGER = p;
         this.SEND_TO_JAIL = status;
     }
 
-    public int getPassengerID() { return this.PASSENGER_ID; }
+    public Passenger getPassenger() { return this.PASSENGER; }
 
     public boolean sendToJail() { return this.SEND_TO_JAIL; }
 }

@@ -10,10 +10,10 @@
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/DocumentCheckerActor.java
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/BagCheckReport.java
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/BagScannerOff.java
-/home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/BodyCheckReport.java
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/SecurityActor.java
-/home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/EndOfDay.java
+/home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/BodyCheckReport.java
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/SystemActor.java
+/home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/EndOfDay.java
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/DocumentCheckReport.java
-/home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/QueueEmptySignal.java
 /home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/EndOfDaySignal.java
+/home/benjamin/Code/SWEN-342-P2/src/main/java/edu/swen342/signals/QueueEmptySignal.java

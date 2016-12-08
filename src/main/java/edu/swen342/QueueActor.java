@@ -17,11 +17,13 @@ public class QueueActor extends UntypedActor{
     private final int LINE_NUMBER;
     private ActorRef bodyChecker;
     private ActorRef bagChecker;
+    private ActorRef securityActor;
 
-    public QueueActor(int lineNum, ActorRef bodyChecker, ActorRef bagChecker) {
+    public QueueActor(int lineNum, ActorRef bodyChecker, ActorRef bagChecker, ActorRef securityActor) {
         this.LINE_NUMBER = lineNum;
         this.bodyChecker = bodyChecker;
         this.bagChecker = bagChecker;
+        this.securityActor = securityActor;
     }
 
 
@@ -30,7 +32,7 @@ public class QueueActor extends UntypedActor{
     public void onReceive(Object message) throws Exception{
     	
     	if(message instanceof Passenger){
-    		System.out.println("Queue Actor received Passenger " + ((Passenger) message).getID() + ".");
+    		System.out.println("Queue Actor " + this.LINE_NUMBER + " received Passenger " + ((Passenger) message).getID() + ".");
     		
     		/*  
 			1) Passengers can go to the body scanner only when it is ready.
@@ -40,9 +42,8 @@ public class QueueActor extends UntypedActor{
     		
     		/* #1 */
     		bodyChecker.tell(message, getSelf());
-    		/* #2 */ 
-    		Bag passengerBag = ((Passenger) message).getBag();
-    		bagChecker.tell(passengerBag, getSelf());
+    		/* #2 */
+    		bagChecker.tell(message, getSelf());
     	}
     }
 }

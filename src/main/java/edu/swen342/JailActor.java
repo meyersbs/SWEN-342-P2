@@ -20,14 +20,14 @@ import akka.actor.UntypedActor;
 */
 public class JailActor extends UntypedActor{
 
-    private ArrayList<Integer> prisoners = new ArrayList<Integer>();
+    private ArrayList<Passenger> prisoners = new ArrayList<Passenger>();
     private int numOfSecretyStations;
     private int station_EndDay_counter =0;
     /**
      * Constructor.
      */
-    public JailActor(int numOfSecretyStations) {
-    	this.numOfSecretyStations = numOfSecretyStations;
+    public JailActor(int numOfSecuretyStations) {
+    	this.numOfSecretyStations = numOfSecuretyStations;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class JailActor extends UntypedActor{
     		System.out.println("Jail Actor received Passenger " + ((Passenger) message).getID() + ".");
     		
     		//Add Person to prisoners array
-    		prisoners.add(((Passenger) message).getID());
+    		prisoners.add(((Passenger) message));
 			System.out.println("Passenger " + ((Passenger) message).getID() + " is in holding.");
 
     	}else if (message instanceof EndOfDay){ /*TODO: make EndOfDay class */
