@@ -17,9 +17,9 @@ Command: `make help`	- Make options displayed.
 
 Command: `make tsa` 	- will build and run the program.
 
-Command: `make file` - Will build, run, and output results to a txt file.
+Command: `make file` 	- Will build, run, and output results to a txt file.
 
-
+Command: `make clean` 	- Will remove the txt file generated from make file.
 
 ### Direct Build
 
