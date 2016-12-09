@@ -2,14 +2,24 @@
 
 [Project Description](http://www.se.rit.edu/~swen-342/projects/TSA-ActorProject.html)
 
-### Dependencies
+=====================  DEPENDENCIES ===================== 
 
 * Java `1.8`
 * Maven `3.3.9`
   * akka `2.4.14`
   * akka_actor `2.11`
 
-### Build
+===================== BUILD OPTIONS ===================== 
+
+### Makefile Build
+
+make help	- Make options displayed.
+make tsa 	- will build and run the program.
+make file 	- Will build, run, and output results to a txt file.
+
+
+
+### Direct Build
 
 Command: `mvn package`
 
