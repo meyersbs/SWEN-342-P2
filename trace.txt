@@ -23,231 +23,237 @@
 #### AIRPORT IS OPEN FOR BUSINESS ####
 	Passenger 1 enters the airport.
 	Passenger 2 enters the airport.
-	Passenger 3 enters the airport.
 	DocumentCheckerActor received Passenger 1.
+	Passenger 3 enters the airport.
 	Passenger 4 enters the airport.
-	Passenger 5 enters the airport.
-	Passenger 6 enters the airport.
 	DocumentCheckerActor approves documents for Passenger 1. Passenger moving to the SecurityQueue.
-	Passenger 7 enters the airport.
-	QueueActor 1 received Passenger 1.
-	Passenger 8 enters the airport.
-	Passenger 9 enters the airport.
-	Passenger 10 enters the airport.
+	Passenger 5 enters the airport.
 	DocumentCheckerActor received Passenger 2.
-	Passenger 11 enters the airport.
-	BodyCheckerActor is checking Passenger 1's body.
-	DocumentCheckerActor approves documents for Passenger 2. Passenger moving to the SecurityQueue.
-	QueueActor 2 received Passenger 2.
-	DocumentCheckerActor received Passenger 3.
-	Passenger 12 enters the airport.
+	Passenger 6 enters the airport.
+	QueueActor 1 received Passenger 1.
 	BagCheckerActor received Passenger 1's bag.
-	Body inspection failed for Passenger 1! Notifying airport security.
-	QueueActor 3 received Passenger 3.
-	Passenger 13 enters the airport.
-	Bag passed inspection for Passenger 1.
-	BagCheckerActor received Passenger 2's bag.
-	Bag passed inspection for Passenger 2.
+	Passenger 7 enters the airport.
+	QueueActor 2 received Passenger 2.
+	DocumentCheckerActor approves documents for Passenger 2. Passenger moving to the SecurityQueue.
+	DocumentCheckerActor received Passenger 3.
 	BodyCheckerActor is checking Passenger 2's body.
 	Body inspection passed for Passenger 2.
-	Passenger 14 enters the airport.
-	BodyCheckerActor is checking Passenger 3's body.
-	Passenger 15 enters the airport.
-	SecurityActor 2 received BagCheckReport for Passenger 2.
+	QueueActor 3 received Passenger 3.
 	BagCheckerActor received Passenger 3's bag.
 	Bag passed inspection for Passenger 3.
-	SecurityActor 3 received BagCheckReport for Passenger 3.
-	SecurityActor 1 received BodyCheckReport for Passenger 1.
-	Body inspection passed for Passenger 3.
-	SecurityActor 1 received BagCheckReport for Passenger 1.
 	SecurityActor 2 received BodyCheckReport for Passenger 2.
-	Passenger 2 has passed security inspection. Passenger has left security area.
-	Passenger 16 enters the airport.
+	DocumentCheckerActor approves documents for Passenger 3. Passenger moving to the SecurityQueue.
+	DocumentCheckerActor received Passenger 4.
+	QueueActor 4 received Passenger 4.
+	BodyCheckerActor is checking Passenger 4's body.
+	Body inspection failed for Passenger 4! Notifying airport security.
+	SecurityActor 4 received BodyCheckReport for Passenger 4.
+	Passenger 8 enters the airport.
+	Bag passed inspection for Passenger 1.
+	BodyCheckerActor is checking Passenger 1's body.
+	DocumentCheckerActor approves documents for Passenger 4. Passenger moving to the SecurityQueue.
+	DocumentCheckerActor received Passenger 5.
+	Body inspection passed for Passenger 1.
+	QueueActor 1 received Passenger 5.
+	BodyCheckerActor is checking Passenger 5's body.
+	BagCheckerActor received Passenger 5's bag.
+	Passenger 9 enters the airport.
+	BagCheckerActor received Passenger 4's bag.
+	SecurityActor 3 received BagCheckReport for Passenger 3.
+	BodyCheckerActor is checking Passenger 3's body.
+	BagCheckerActor received Passenger 2's bag.
+	Body inspection failed for Passenger 3! Notifying airport security.
+	Bag passed inspection for Passenger 4.
+	Passenger 10 enters the airport.
+	Passenger 11 enters the airport.
+	Bag passed inspection for Passenger 5.
+	Body inspection passed for Passenger 5.
+	DocumentCheckerActor approves documents for Passenger 5. Passenger moving to the SecurityQueue.
+	SecurityActor 1 received BagCheckReport for Passenger 1.
+	SecurityActor 1 received BodyCheckReport for Passenger 1.
+	Passenger 1 has passed security inspection. Passenger has left security area.
+	DocumentCheckerActor received Passenger 6.
+	Passenger 12 enters the airport.
+	DocumentCheckerActor approves documents for Passenger 6. Passenger moving to the SecurityQueue.
+	SecurityActor 4 received BagCheckReport for Passenger 4.
 	SecurityActor 3 received BodyCheckReport for Passenger 3.
-	Passenger 1 has failed security inspection. Notifying JailActor.
-	Passenger 3 has passed security inspection. Passenger has left security area.
-	JailActor received Passenger 1.
-	Passenger 1 is placed in holding.
+	Bag failed inspection for Passenger 2! Notifying airport security.
+	Passenger 3 has failed security inspection. Notifying JailActor.
+	Passenger 4 has failed security inspection. Notifying JailActor.
+	JailActor received Passenger 3.
+	Passenger 3 is placed in holding.
+	JailActor received Passenger 4.
+	Passenger 4 is placed in holding.
+	QueueActor 2 received Passenger 6.
+	DocumentCheckerActor received Passenger 7.
+	BodyCheckerActor is checking Passenger 6's body.
+	Passenger 13 enters the airport.
+	SecurityActor 1 received BagCheckReport for Passenger 5.
+	Passenger 14 enters the airport.
+	SecurityActor 1 received BodyCheckReport for Passenger 5.
+	Passenger 5 has passed security inspection. Passenger has left security area.
+	Body inspection passed for Passenger 6.
+	BagCheckerActor received Passenger 6's bag.
+	DocumentCheckerActor turns Passenger 7 away.
+	SecurityActor 2 received BagCheckReport for Passenger 2.
+	DocumentCheckerActor received Passenger 8.
+	Bag passed inspection for Passenger 6.
+	DocumentCheckerActor approves documents for Passenger 8. Passenger moving to the SecurityQueue.
+	QueueActor 3 received Passenger 8.
+	Passenger 15 enters the airport.
+	BodyCheckerActor is checking Passenger 8's body.
+	DocumentCheckerActor received Passenger 9.
+	Passenger 2 has failed security inspection. Notifying JailActor.
+	DocumentCheckerActor approves documents for Passenger 9. Passenger moving to the SecurityQueue.
+	DocumentCheckerActor received Passenger 10.
+	DocumentCheckerActor approves documents for Passenger 10. Passenger moving to the SecurityQueue.
+	QueueActor 1 received Passenger 10.
+	DocumentCheckerActor received Passenger 11.
+	BagCheckerActor received Passenger 10's bag.
+	Bag passed inspection for Passenger 10.
+	SecurityActor 2 received BodyCheckReport for Passenger 6.
+	JailActor received Passenger 2.
+	Passenger 2 is placed in holding.
+	QueueActor 4 received Passenger 9.
+	BagCheckerActor received Passenger 8's bag.
+	Body inspection passed for Passenger 8.
+	BagCheckerActor received Passenger 9's bag.
+	Bag passed inspection for Passenger 9.
+	BodyCheckerActor is checking Passenger 9's body.
+	Body inspection passed for Passenger 9.
+	Passenger 16 enters the airport.
 	Passenger 17 enters the airport.
 	Passenger 18 enters the airport.
 	Passenger 19 enters the airport.
 	Passenger 20 enters the airport.
-	DocumentCheckerActor approves documents for Passenger 3. Passenger moving to the SecurityQueue.
-	DocumentCheckerActor received Passenger 4.
-	DocumentCheckerActor turns Passenger 4 away.
-	DocumentCheckerActor received Passenger 5.
-	QueueActor 4 received Passenger 5.
-	BodyCheckerActor is checking Passenger 5's body.
-	Body inspection passed for Passenger 5.
-	BagCheckerActor received Passenger 5's bag.
-	Bag passed inspection for Passenger 5.
-	SecurityActor 4 received BodyCheckReport for Passenger 5.
-	DocumentCheckerActor approves documents for Passenger 5. Passenger moving to the SecurityQueue.
-	SecurityActor 4 received BagCheckReport for Passenger 5.
-	Passenger 5 has passed security inspection. Passenger has left security area.
-	DocumentCheckerActor received Passenger 6.
-	DocumentCheckerActor turns Passenger 6 away.
-	DocumentCheckerActor received Passenger 7.
-	DocumentCheckerActor turns Passenger 7 away.
-	DocumentCheckerActor received Passenger 8.
-	DocumentCheckerActor approves documents for Passenger 8. Passenger moving to the SecurityQueue.
-	DocumentCheckerActor received Passenger 9.
-	QueueActor 1 received Passenger 8.
-	QueueActor 2 received Passenger 9.
-	DocumentCheckerActor approves documents for Passenger 9. Passenger moving to the SecurityQueue.
-	BagCheckerActor received Passenger 8's bag.
-	BagCheckerActor received Passenger 9's bag.
-	BodyCheckerActor is checking Passenger 9's body.
-	Body inspection failed for Passenger 9! Notifying airport security.
-	Bag passed inspection for Passenger 9.
-	Bag passed inspection for Passenger 8.
-	DocumentCheckerActor received Passenger 10.
-	SecurityActor 1 received BagCheckReport for Passenger 8.
-	BodyCheckerActor is checking Passenger 8's body.
-	Body inspection passed for Passenger 8.
-	QueueActor 3 received Passenger 10.
-	DocumentCheckerActor approves documents for Passenger 10. Passenger moving to the SecurityQueue.
-	SecurityActor 2 received BodyCheckReport for Passenger 9.
+	SecurityActor 4 received BagCheckReport for Passenger 9.
+	SecurityActor 3 received BodyCheckReport for Passenger 8.
+	Bag failed inspection for Passenger 8! Notifying airport security.
+	SecurityActor 2 received BagCheckReport for Passenger 6.
+	SecurityActor 1 received BagCheckReport for Passenger 10.
 	BodyCheckerActor is checking Passenger 10's body.
-	Body inspection failed for Passenger 10! Notifying airport security.
-	SecurityActor 1 received BodyCheckReport for Passenger 8.
-	Passenger 8 has passed security inspection. Passenger has left security area.
-	SecurityActor 3 received BodyCheckReport for Passenger 10.
-	DocumentCheckerActor received Passenger 11.
-	SecurityActor 2 received BagCheckReport for Passenger 9.
-	BagCheckerActor received Passenger 10's bag.
-	QueueActor 4 received Passenger 11.
-	DocumentCheckerActor approves documents for Passenger 11. Passenger moving to the SecurityQueue.
-	Passenger 9 has failed security inspection. Notifying JailActor.
+	Body inspection passed for Passenger 10.
+	DocumentCheckerActor turns Passenger 11 away.
+	SecurityActor 1 received BodyCheckReport for Passenger 10.
+	SecurityActor 4 received BodyCheckReport for Passenger 9.
+	SecurityActor 3 received BagCheckReport for Passenger 8.
+	Passenger 6 has passed security inspection. Passenger has left security area.
+	Passenger 8 has failed security inspection. Notifying JailActor.
+	Passenger 9 has passed security inspection. Passenger has left security area.
+	Passenger 10 has passed security inspection. Passenger has left security area.
 	DocumentCheckerActor received Passenger 12.
-	BagCheckerActor received Passenger 11's bag.
-	JailActor received Passenger 9.
-	BodyCheckerActor is checking Passenger 11's body.
-	Bag passed inspection for Passenger 10.
-	QueueActor 1 received Passenger 12.
+	JailActor received Passenger 8.
+	Passenger 8 is placed in holding.
 	DocumentCheckerActor approves documents for Passenger 12. Passenger moving to the SecurityQueue.
-	Body inspection failed for Passenger 11! Notifying airport security.
-	Passenger 9 is placed in holding.
-	SecurityActor 4 received BodyCheckReport for Passenger 11.
-	Bag passed inspection for Passenger 11.
-	SecurityActor 4 received BagCheckReport for Passenger 11.
+	QueueActor 2 received Passenger 12.
 	DocumentCheckerActor received Passenger 13.
-	BodyCheckerActor is checking Passenger 12's body.
-	QueueActor 2 received Passenger 13.
-	BodyCheckerActor is checking Passenger 13's body.
-	Body inspection failed for Passenger 13! Notifying airport security.
-	BagCheckerActor received Passenger 13's bag.
-	Bag passed inspection for Passenger 13.
-	SecurityActor 2 received BodyCheckReport for Passenger 13.
-	BagCheckerActor received Passenger 12's bag.
-	Bag passed inspection for Passenger 12.
-	SecurityActor 1 received BagCheckReport for Passenger 12.
-	SecurityActor 3 received BagCheckReport for Passenger 10.
-	SecurityActor 2 received BagCheckReport for Passenger 13.
 	DocumentCheckerActor approves documents for Passenger 13. Passenger moving to the SecurityQueue.
+	QueueActor 3 received Passenger 13.
+	BodyCheckerActor is checking Passenger 12's body.
+	BagCheckerActor received Passenger 12's bag.
 	Body inspection passed for Passenger 12.
-	SecurityActor 1 received BodyCheckReport for Passenger 12.
-	Passenger 11 has failed security inspection. Notifying JailActor.
-	Passenger 12 has passed security inspection. Passenger has left security area.
-	JailActor received Passenger 11.
-	Passenger 11 is placed in holding.
+	BodyCheckerActor is checking Passenger 13's body.
+	BagCheckerActor received Passenger 13's bag.
+	Bag failed inspection for Passenger 13! Notifying airport security.
 	DocumentCheckerActor received Passenger 14.
+	SecurityActor 3 received BagCheckReport for Passenger 13.
+	SecurityActor 2 received BodyCheckReport for Passenger 12.
+	Body inspection passed for Passenger 13.
+	SecurityActor 3 received BodyCheckReport for Passenger 13.
 	Passenger 13 has failed security inspection. Notifying JailActor.
-	Passenger 10 has failed security inspection. Notifying JailActor.
+	Bag passed inspection for Passenger 12.
 	JailActor received Passenger 13.
 	Passenger 13 is placed in holding.
-	DocumentCheckerActor turns Passenger 14 away.
-	JailActor received Passenger 10.
-	Passenger 10 is placed in holding.
+	QueueActor 4 received Passenger 14.
+	DocumentCheckerActor approves documents for Passenger 14. Passenger moving to the SecurityQueue.
+	BodyCheckerActor is checking Passenger 14's body.
+	SecurityActor 2 received BagCheckReport for Passenger 12.
+	Passenger 12 has passed security inspection. Passenger has left security area.
 	DocumentCheckerActor received Passenger 15.
-	DocumentCheckerActor approves documents for Passenger 15. Passenger moving to the SecurityQueue.
-	QueueActor 3 received Passenger 15.
-	DocumentCheckerActor received Passenger 16.
-	BodyCheckerActor is checking Passenger 15's body.
+	BagCheckerActor received Passenger 14's bag.
+	QueueActor 1 received Passenger 15.
 	BagCheckerActor received Passenger 15's bag.
-	Bag failed inspection for Passenger 15! Notifying airport security.
-	SecurityActor 3 received BagCheckReport for Passenger 15.
-	DocumentCheckerActor approves documents for Passenger 16. Passenger moving to the SecurityQueue.
-	DocumentCheckerActor received Passenger 17.
-	QueueActor 1 received Passenger 17.
+	BodyCheckerActor is checking Passenger 15's body.
+	DocumentCheckerActor approves documents for Passenger 15. Passenger moving to the SecurityQueue.
 	Body inspection passed for Passenger 15.
-	SecurityActor 3 received BodyCheckReport for Passenger 15.
-	Passenger 15 has failed security inspection. Notifying JailActor.
-	QueueActor 4 received Passenger 16.
-	JailActor received Passenger 15.
-	Passenger 15 is placed in holding.
-	DocumentCheckerActor approves documents for Passenger 17. Passenger moving to the SecurityQueue.
+	DocumentCheckerActor received Passenger 16.
+	DocumentCheckerActor turns Passenger 16 away.
+	Body inspection failed for Passenger 14! Notifying airport security.
+	Bag passed inspection for Passenger 15.
+	Bag failed inspection for Passenger 14! Notifying airport security.
+	SecurityActor 4 received BodyCheckReport for Passenger 14.
+	SecurityActor 4 received BagCheckReport for Passenger 14.
+	Passenger 14 has failed security inspection. Notifying JailActor.
+	DocumentCheckerActor received Passenger 17.
+	SecurityActor 1 received BodyCheckReport for Passenger 15.
+	QueueActor 2 received Passenger 17.
 	BagCheckerActor received Passenger 17's bag.
 	BodyCheckerActor is checking Passenger 17's body.
-	Body inspection passed for Passenger 17.
-	BagCheckerActor received Passenger 16's bag.
-	BodyCheckerActor is checking Passenger 16's body.
-	Body inspection passed for Passenger 16.
+	DocumentCheckerActor approves documents for Passenger 17. Passenger moving to the SecurityQueue.
+	JailActor received Passenger 14.
 	DocumentCheckerActor received Passenger 18.
-	Bag passed inspection for Passenger 17.
-	QueueActor 2 received Passenger 18.
-	BodyCheckerActor is checking Passenger 18's body.
-	Body inspection passed for Passenger 18.
-	SecurityActor 2 received BodyCheckReport for Passenger 18.
-	Bag passed inspection for Passenger 16.
-	SecurityActor 1 received BodyCheckReport for Passenger 17.
-	DocumentCheckerActor approves documents for Passenger 18. Passenger moving to the SecurityQueue.
-	BagCheckerActor received Passenger 18's bag.
-	SecurityActor 4 received BodyCheckReport for Passenger 16.
-	Bag passed inspection for Passenger 18.
+	Body inspection passed for Passenger 17.
+	Bag failed inspection for Passenger 17! Notifying airport security.
+	SecurityActor 2 received BodyCheckReport for Passenger 17.
+	SecurityActor 2 received BagCheckReport for Passenger 17.
+	Passenger 17 has failed security inspection. Notifying JailActor.
+	SecurityActor 1 received BagCheckReport for Passenger 15.
+	Passenger 15 has passed security inspection. Passenger has left security area.
+	DocumentCheckerActor turns Passenger 18 away.
+	Passenger 14 is placed in holding.
 	DocumentCheckerActor received Passenger 19.
+	JailActor received Passenger 17.
+	Passenger 17 is placed in holding.
 	DocumentCheckerActor turns Passenger 19 away.
 	DocumentCheckerActor received Passenger 20.
-	SecurityActor 1 received BagCheckReport for Passenger 17.
-	SecurityActor 2 received BagCheckReport for Passenger 18.
-	QueueActor 3 received Passenger 20.
-	SecurityActor 4 received BagCheckReport for Passenger 16.
 	DocumentCheckerActor approves documents for Passenger 20. Passenger moving to the SecurityQueue.
-	Passenger 18 has passed security inspection. Passenger has left security area.
-	Passenger 16 has passed security inspection. Passenger has left security area.
-	Passenger 17 has passed security inspection. Passenger has left security area.
+	QueueActor 3 received Passenger 20.
 	DocumentCheckerActor is shutting down. Notifying SecurityQueues.
-	BagCheckerActor received Passenger 20's bag.
 	BodyCheckerActor is checking Passenger 20's body.
-	Bag passed inspection for Passenger 20.
 	Body inspection passed for Passenger 20.
-	SecurityActor 3 received BagCheckReport for Passenger 20.
+	BagCheckerActor received Passenger 20's bag.
+	Bag failed inspection for Passenger 20! Notifying airport security.
+	QueueActor 2 received ShutDown Signal from DocumentCheckerActor.
 	SecurityActor 3 received BodyCheckReport for Passenger 20.
-	Passenger 20 has passed security inspection. Passenger has left security area.
-	QueueActor 3 received DocumentCheckerShuttingDown Signal.
-	QueueActor 2 received DocumentCheckerShuttingDown Signal.
-	QueueActor 1 received DocumentCheckerShuttingDown Signal.
-	BagCheckerActor 2 is shutting down. Notifying SecurityActor 2.
-	BagCheckerActor 3 is shutting down. Notifying SecurityActor 3.
+	SecurityActor 3 received BagCheckReport for Passenger 20.
+	Passenger 20 has failed security inspection. Notifying JailActor.
 	BodyCheckerActor 2 is shutting down. Notifying SecurityActor 2.
-	BodyCheckerActor 1 is shutting down. Notifying SecurityActor 1.
-	BagCheckerActor 1 is shutting down. Notifying SecurityActor 1.
-	QueueActor 4 received DocumentCheckerShuttingDown Signal.
-	BodyCheckerActor 4 is shutting down. Notifying SecurityActor 4.
-	SecurityActor 4 received BodyScannerOff Signal from BodyCheckerActor 4.
-	BodyCheckerActor 3 is shutting down. Notifying SecurityActor 3.
-	SecurityActor 3 received BagScannerOff Signal from BagCheckerActor 3.
-	SecurityActor 2 received BagScannerOff Signal from BagCheckerActor 2.
-	SecurityActor 1 received BagScannerOff Signal from BagCheckerActor 1.
-	SecurityActor 1 received BodyScannerOff Signal from BodyCheckerActor 1.
-	SecurityActor 1 is shutting down. Notifying JailActor.
-	BagCheckerActor 4 is shutting down. Notifying SecurityActor 4.
+	BagCheckerActor 2 is shutting down. Notifying SecurityActor 2.
 	SecurityActor 2 received BodyScannerOff Signal from BodyCheckerActor 2.
-	SecurityActor 3 received BodyScannerOff Signal from BodyCheckerActor 3.
+	SecurityActor 2 received BagScannerOff Signal from BagCheckerActor 2.
+	QueueActor 3 received ShutDown Signal from DocumentCheckerActor.
+	QueueActor 4 received ShutDown Signal from DocumentCheckerActor.
+	BodyCheckerActor 3 is shutting down. Notifying SecurityActor 3.
+	BodyCheckerActor 4 is shutting down. Notifying SecurityActor 4.
+	BagCheckerActor 4 is shutting down. Notifying SecurityActor 4.
+	SecurityActor 4 received BodyScannerOff Signal from BodyCheckerActor 4.
+	QueueActor 1 received ShutDown Signal from DocumentCheckerActor.
 	SecurityActor 2 is shutting down. Notifying JailActor.
+	JailActor received Passenger 20.
+	Passenger 20 is placed in holding.
+	BagCheckerActor 1 is shutting down. Notifying SecurityActor 1.
+	SecurityActor 1 received BagScannerOff Signal from BagCheckerActor 1.
+	BodyCheckerActor 1 is shutting down. Notifying SecurityActor 1.
 	SecurityActor 4 received BagScannerOff Signal from BagCheckerActor 4.
-	SecurityActor 4 is shutting down. Notifying JailActor.
-	JailActor received EndOfDay signal from SecurityActor 1.
-	JailActor received EndOfDay signal from SecurityActor 2.
-	JailActor received EndOfDay signal from SecurityActor 4.
+	SecurityActor 3 received BodyScannerOff Signal from BodyCheckerActor 3.
+	BagCheckerActor 3 is shutting down. Notifying SecurityActor 3.
+	SecurityActor 3 received BagScannerOff Signal from BagCheckerActor 3.
 	SecurityActor 3 is shutting down. Notifying JailActor.
+	SecurityActor 4 is shutting down. Notifying JailActor.
+	SecurityActor 1 received BodyScannerOff Signal from BodyCheckerActor 1.
+	JailActor received EndOfDay signal from SecurityActor 2.
 	JailActor received EndOfDay signal from SecurityActor 3.
+	JailActor received EndOfDay signal from SecurityActor 4.
+	SecurityActor 1 is shutting down. Notifying JailActor.
+	JailActor received EndOfDay signal from SecurityActor 1.
 #### CLOSING TIME ####
-	JailActor is sending Passenger 1 to permanent detention.
-	JailActor is sending Passenger 9 to permanent detention.
-	JailActor is sending Passenger 11 to permanent detention.
+	JailActor is sending Passenger 3 to permanent detention.
+	JailActor is sending Passenger 4 to permanent detention.
+	JailActor is sending Passenger 2 to permanent detention.
+	JailActor is sending Passenger 8 to permanent detention.
 	JailActor is sending Passenger 13 to permanent detention.
-	JailActor is sending Passenger 10 to permanent detention.
-	JailActor is sending Passenger 15 to permanent detention.
+	JailActor is sending Passenger 14 to permanent detention.
+	JailActor is sending Passenger 17 to permanent detention.
+	JailActor is sending Passenger 20 to permanent detention.
 	JailActor is locking up the airport.
 #### AIRPORT IS CLOSED ####

@@ -40,7 +40,8 @@ public class DocumentCheckerActor extends UntypedActor{
 	 * 		Passenger
 	 *
 	 * Sends:
-	 * 		Passenger to QueueActor
+	 * 		Passenger to QueueActors
+	 * 		ShutDown to QueueActors
 	 */
 	@Override
     public void onReceive(Object message) throws Exception {
@@ -66,7 +67,7 @@ public class DocumentCheckerActor extends UntypedActor{
     			/* Shut down and notify each SecurityActor */
     			System.out.println("\tDocumentCheckerActor is shutting down. Notifying SecurityQueues.");
     			for(ActorRef q : queues) {
-    				q.tell(new DocumentCheckerShuttingDown(), getSelf());
+    				q.tell(new ShutDown(), getSelf());
 				}
 			}
     	}

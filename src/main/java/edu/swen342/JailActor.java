@@ -24,9 +24,7 @@ public class JailActor extends UntypedActor{
     private int stationEndDayCounter = 0;
 
     /** Constructor. */
-    public JailActor(int n) {
-    	this.numOfSecurityStations = n;
-    }
+    public JailActor(int n) { this.numOfSecurityStations = n; }
 
 	/**
 	 * Message handling.
@@ -55,7 +53,7 @@ public class JailActor extends UntypedActor{
     			System.out.println("#### CLOSING TIME ####");
 
     			/* Send all of the prisoners to permanent detention */
-				for (Passenger prisoner : prisoners) {
+				for(Passenger prisoner : prisoners) {
 					System.out.println("\tJailActor is sending Passenger " + prisoner.getID() + " to permanent detention.");
 				}
     			System.out.println("\tJailActor is locking up the airport.");

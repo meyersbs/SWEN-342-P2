@@ -37,7 +37,7 @@ public class QueueActor extends UntypedActor{
      * Message handling.
      * Receives:
      *      Passenger from DocumentCheckerActor
-     *      DocumentCheckerShuttingDown from DocumentCheckerActor
+     *      ShutDown from DocumentCheckerActor
      *
      * Sends:
      *      Passenger to BagCheckerActor
@@ -54,9 +54,9 @@ public class QueueActor extends UntypedActor{
     		bodyChecker.tell(message, getSelf());
     		bagChecker.tell(message, getSelf());
     	}
-    	/* Else if QueueActor receives DocumentCheckerShuttingDown */
-    	else if(message instanceof DocumentCheckerShuttingDown) {
-    	    System.out.println("\tQueueActor " + this.LINE_NUMBER + " received DocumentCheckerShuttingDown Signal.");
+    	/* Else if QueueActor receives ShutDown */
+    	else if(message instanceof ShutDown) {
+    	    System.out.println("\tQueueActor " + this.LINE_NUMBER + " received ShutDown Signal from DocumentCheckerActor.");
     	    /* Send ShutDown Signal to BagCheckerActor and BodyCheckerActor */
     	    bodyChecker.tell(new ShutDown(), getSelf());
             bagChecker.tell(new ShutDown(), getSelf());
