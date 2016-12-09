@@ -1,80 +1,74 @@
 package edu.swen342;
 
-/**
+/*
  * @project: SWEN-342 | TSA Airport
  *
  * @author: Benjamin S. Meyers
  * @author: Asma Sattar
  */
 
+/* IMPORTS ************************************************************************************************************/
 import akka.actor.UntypedActor;
 import akka.actor.ActorRef;
 import java.util.ArrayList;
 import java.util.Random;
 
-
-import akka.actor.*;
-import akka.actor.UntypedActor;
-import akka.actor.Actor;
-
+/**
+ * 1) Passengers enter the system from a main driver program.
+ * 2) Passengers are randomly turned away for document problems at a probability of 20%.
+ * 3) Passengers not turned away enter the queue for one of the lines in a cyclic fashion.
+ */
 public class DocumentCheckerActor extends UntypedActor{
 
-	/* Variables */
-
-	//passneger queue
+	/* GLOBAL VARIABLES ***********************************************************************************************/
 	private ArrayList<ActorRef> queues;
 	private int passengersChecked = 0;
-	private int passengersSentToQueue = 0;
-	
-	//random number generator for whether a passenger is turned away or allowed to proceed. 
 	private Random random = new Random();
-
-	//Queue tracker
 	private int queueCount = 0;
-    /**
-     * Constructor.
-     */
-    public DocumentCheckerActor(ArrayList<ActorRef> queues) {
+
+	/**
+	 * Constructor.
+	 * @param queues - an ArrayList of QueueActors.
+	 */
+	public DocumentCheckerActor(ArrayList<ActorRef> queues) {
     	this.queues = queues;
     }
 
-    @Override
-    public void onReceive(Object message) throws Exception{
-    	
-    	if(message instanceof Passenger){
+	/**
+	 * Message handling.
+	 * Receives:
+	 * 		Passenger
+	 *
+	 * Sends:
+	 * 		Passenger to QueueActor
+	 */
+	@Override
+    public void onReceive(Object message) throws Exception {
+
+		/* If DocumentCheckerActor receives Passenger... */
+    	if(message instanceof Passenger) {
     		passengersChecked++;
-    		System.out.println("Document Checker received Passenger " + ((Passenger) message).getID() + ".");
-    		
-    		/*  
-			1) Passengers enter the system from a main driver program.
-			2) Passengers are randomly turned away for document problems at a probability of 20%.
-			3) Passengers not turned away enter the queue for one of the lines in a cyclic fashion.
-    		*/
-    		
+    		System.out.println("\tDocumentCheckerActor received Passenger " + ((Passenger) message).getID() + ".");
 
-    		/* #2 IF -> Passenger’s with proper documents are assigned to the queue for one of the lines. */
-    		if (random.nextDouble() > 0.2) {
-				
-				/* Add Passenger to one of the lines */
-
+    		/* If the Passenger has proper documentation, assign them to the next QueueActor in the cycle */
+    		if(random.nextDouble() > 0.2) {
 				queues.get(queueCount).tell(message, getSelf());
-				passengersSentToQueue++;
 				queueCount = ((queueCount + 1)  % queues.size());
-				System.out.println("Documents approved for passenger " + ((Passenger) message).getID() + ". Passenger moving to the Security Queue .");
+				System.out.println("\tDocumentCheckerActor approves documents for Passenger " + ((Passenger) message).getID() + ". Passenger moving to the SecurityQueue.");
     		}
-    		/* ELSE -> Passenger’s with document problems are turned away..*/
-    		else{
-    			System.out.println("Document Checker turns passenger " + ((Passenger) message).getID() + " away.");
+    		/* Else if the Passenger has forged documentation, send them away */
+    		else {
+    			System.out.println("\tDocumentCheckerActor turns Passenger " + ((Passenger) message).getID() + " away.");
     		}
 
+    		/* If all of the Passengers have been processed... */
     		if(passengersChecked == 20) {
-    			System.out.println("Document Checker has no more passengers to check. Notifying Queues.");
+    			/* Shut down and notify each SecurityActor */
+    			System.out.println("\tDocumentCheckerActor is shutting down. Notifying SecurityQueues.");
     			for(ActorRef q : queues) {
-    				q.tell(new DocumentCheckerShuttingDown(passengersSentToQueue, queueCount), getSelf());
+    				q.tell(new DocumentCheckerShuttingDown(), getSelf());
 				}
 			}
-
-    		
     	}
     }
 }
