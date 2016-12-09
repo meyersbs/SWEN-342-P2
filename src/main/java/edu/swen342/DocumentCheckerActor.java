@@ -30,9 +30,7 @@ public class DocumentCheckerActor extends UntypedActor{
 	 * Constructor.
 	 * @param queues - an ArrayList of QueueActors.
 	 */
-	public DocumentCheckerActor(ArrayList<ActorRef> queues) {
-    	this.queues = queues;
-    }
+	public DocumentCheckerActor(ArrayList<ActorRef> queues) { this.queues = queues; }
 
 	/**
 	 * Message handling.

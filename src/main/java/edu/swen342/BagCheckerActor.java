@@ -37,7 +37,7 @@ public class BagCheckerActor extends UntypedActor {
      *
      * Sends:
      *      BagCheckReport to SecurityActor
-     *      BagScannerOff to SecurityActor
+     *      BagCheckerOff to SecurityActor
      */
     @Override
     public void onReceive(Object message) throws Exception{
@@ -61,7 +61,7 @@ public class BagCheckerActor extends UntypedActor {
         /* Else if BagCheckerActor receives ShutDown Signal, shutdown and notify SecurityActor */
         else if(message instanceof ShutDown) {
             System.out.println("\tBagCheckerActor " + this.LINE_NUMBER + " is shutting down. Notifying SecurityActor " + this.LINE_NUMBER + ".");
-            securityActor.tell(new BagScannerOff(), getSelf());
+            securityActor.tell(new BagCheckerOff(), getSelf());
         }
     }
 }

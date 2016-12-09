@@ -42,11 +42,12 @@ public class SecurityActor extends UntypedActor {
      * Receives:
      *      BagCheckReport from BagCheckerActor
      *      BodyCheckReport from BodyCheckerActor
-     *      BagScannerOff from BagCheckerActor
-     *      BodyScannerOff from BodyCheckerActor
+     *      BagCheckerOff from BagCheckerActor
+     *      BodyCheckerOff from BodyCheckerActor
      *
      * Sends:
      *      Passenger to JailActor
+     *      EndOfDay to JailActor
      */
     @Override
     public void onReceive(Object message) throws Exception {
@@ -94,15 +95,15 @@ public class SecurityActor extends UntypedActor {
                 this.passengers.add(s);
             }
         }
-        /* Else if SecurityActor receives BodyScannerOff Signal... */
-        else if(message instanceof BodyScannerOff) {
-            System.out.println("\tSecurityActor " + this.LINE_NUMBER + " received BodyScannerOff Signal from BodyCheckerActor " + this.LINE_NUMBER + ".");
+        /* Else if SecurityActor receives BodyCheckerOff Signal... */
+        else if(message instanceof BodyCheckerOff) {
+            System.out.println("\tSecurityActor " + this.LINE_NUMBER + " received BodyCheckerOff Signal from BodyCheckerActor " + this.LINE_NUMBER + ".");
             /* Set boolean flag */
             this.bodyCheckerOff = true;
         }
-        /* Else if SecurityActor receives BagScannerOff Signal... */
-        else if(message instanceof BagScannerOff) {
-            System.out.println("\tSecurityActor " + this.LINE_NUMBER + " received BagScannerOff Signal from BagCheckerActor " + this.LINE_NUMBER + ".");
+        /* Else if SecurityActor receives BagCheckerOff Signal... */
+        else if(message instanceof BagCheckerOff) {
+            System.out.println("\tSecurityActor " + this.LINE_NUMBER + " received BagCheckerOff Signal from BagCheckerActor " + this.LINE_NUMBER + ".");
             /* Set boolean flag */
             this.bagCheckerOff = true;
         }

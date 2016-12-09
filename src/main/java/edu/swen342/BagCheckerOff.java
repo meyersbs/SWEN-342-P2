@@ -8,9 +8,9 @@ package edu.swen342;
  */
 
 /**
- * Signal passed from BodyCheckerActor to SecurityActor.
+ * Signal passed from BagCheckerActor to SecurityActor.
  */
-public class BodyScannerOff {
+public class BagCheckerOff {
     /** Constructor. */
-    public BodyScannerOff() {}
+    public BagCheckerOff() {}
 }

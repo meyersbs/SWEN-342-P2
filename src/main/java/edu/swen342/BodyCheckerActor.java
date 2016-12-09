@@ -37,7 +37,7 @@ public class BodyCheckerActor extends UntypedActor {
      *
      * Sends:
      *      BodyCheckReport to SecurityActor
-     *      BodyScannerOff to SecurityActor
+     *      BodyCheckerOff to SecurityActor
      */
     @Override
     public void onReceive(Object message) throws Exception{
@@ -61,7 +61,7 @@ public class BodyCheckerActor extends UntypedActor {
         /* Else if BodyCheckerActor receives ShutDown Signal, shutdown and notify SecurityActor */
         else if(message instanceof ShutDown) {
             System.out.println("\tBodyCheckerActor " + this.LINE_NUMBER + " is shutting down. Notifying SecurityActor " + this.LINE_NUMBER + ".");
-            securityActor.tell(new BodyScannerOff(), getSelf());
+            securityActor.tell(new BodyCheckerOff(), getSelf());
         }
     }
 }
