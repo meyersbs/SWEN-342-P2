@@ -13,9 +13,11 @@
 
 ### Makefile Build
 
-make help	- Make options displayed.
-make tsa 	- will build and run the program.
-make file 	- Will build, run, and output results to a txt file.
+Command: `make help`	- Make options displayed.
+
+Command: `make tsa` 	- will build and run the program.
+
+Command: `make file` - Will build, run, and output results to a txt file.
 
 
 
